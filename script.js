@@ -1,54 +1,37 @@
 // write your JS code here
 
-let price = 0;
-let count = 0;
-function decrease() {
-    count++;
-    price += 5.99;
-    document.querySelector('#dec').innerHTML = count;
-    document.querySelector('#price').innerHTML = price;
-    console.log(count);
+let inputEl
+const price = 5.99
+
+function initialize() {
+    inputEl = document.querySelector('input')
+    updateTotalAmount(0)
+    for (let i = 0; i < bookDetails.length; i++) {
+
+        document.querySelector('.card-title').innerHTML = bookDetails[i].bookName;
+        document.querySelector('#author >strong').innerHTML = bookDetails[i].author;
+        document.querySelector('.text-info').innerHTML = bookDetails[i].detail;
+        document.querySelector('#image').style["background-image"] = `url(images/${bookDetails[i].image})`;
+    }
 }
+
+// increase the valua
 
 function increase() {
-    count--;
-    price -= 5.99;
-    document.querySelector('#dec').innerHTML = count;
-    document.querySelector('#price').innerHTML = price;
+    inputEl.value = parseInt(inputEl.value) + 1;
+    updateTotalAmount(inputEl.value)
 }
 
+// decrease the valua
 
-// second book
-
-function secDecrease() {
-    count++;
-    price += 11.97;
-    document.querySelector('#sec-dec').innerHTML = count;
-    document.querySelector('#sec-price').innerHTML = price;
-
+function decrease() {
+    if (+inputEl.value <= 0) return
+    inputEl.value = parseInt(inputEl.value) - 1;
+    updateTotalAmount(inputEl.value)
 }
-
-function secIncrease() {
-    count--;
-    price -= 5.99;
-    document.querySelector('#sec-dec').innerHTML = count;
-    document.querySelector('#sec-price').innerHTML = price;
-}
-
-// third book
-
-
-function thirdDecrease() {
-    count++;
-    price += 11.97;
-    document.querySelector('#third-dec').innerHTML = count;
-    document.querySelector('#third-price').innerHTML = price;
-
-}
-
-function thirdIncrease() {
-    count--;
-    price -= 5.99;
-    document.querySelector('#third-dec').innerHTML = count;
-    document.querySelector('#thirs-price').innerHTML = price;
+// addition of price
+function updateTotalAmount(newQuantity) {
+    document.querySelector('.alert #price').innerHTML = (
+        newQuantity * price
+    ).toFixed(2)
 }

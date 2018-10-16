@@ -1,75 +1,78 @@
 /* write your CSS here */
-html {
-    width: 100% !important;
-    margin: 0px;
-}
-body {
-    width: 100% !important;
-}
-nav {
-    height: 80px;
-    width: 100%;
+.navbar {
     display: flex;
     flex-direction: row;
-    justify-content: end;
-
+    justify-content: left;
+    width: 100%;
 }
 .logo {
     background-image: url('images/logo.png');
     background-size: cover;
-    height: 60px;
-    width: 60px;
+    background-position: center;
+    width: 80px;
+    height: 80px;
 }
-
 .heading {
     margin-left: 16px;
 }
-.image {
-    height: 300px;
-  
-    margin: 16px;
-}
-img {
-  
-    height: 300px;
-    max-width: 400px;
-   
+.card {
+    margin-top: 16px;
+    width: 100%;
 }
 .container {
-     max-width: none;
-     width: 100%;
+  display: flex;
+    justify-content: space-around;
+    flex-direction: column;
 }
-.card {
-    flex-direction: row;
-     margin-top: 16px;
+.card-content {
+    margin-left: 16px;
+}
+.book-image > div {
+    background-size: cover;
+    background-position: center;
+    width: 180px;
+    height: 280px;
 }
 
-.secondlast-para {
+.card-body{
     display: flex;
+    flex-direction: row;
+    margin-top: 16px;
+}
+.text-info {
+    font-weight: 600;
+}
+/* price setting  */
+
+#price-set {
+    display: flex;
+    flex-direction: row;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 .price {
     display: flex;
     flex-direction: row;
 }
-#dec ,#sec-dec ,#third-dec {
-    border-top:  1px solid #607D8B;
-    border-bottom: 1px solid #607D8B;
-    width: 60px;
+.form-control {
+    width: 60px !important;
+    border-radius: initial;
+    text-align: center;
 }
-.text-success {
-    margin-left: 6px;
-}
-
-.alert {
+.input-group button {
+    width: 40px;
+    text-align: center;
     display: flex;
     justify-content: center;
 }
+.alert {
+    justify-content: center;
+    display: flex;
+    padding-left: 0px;
+}
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width:980px) {
     .navbar {
-            display: flex;
-            flex-direction: row;
-            justify-content: end;
-    }    
+        display: flex;
+    }
 }

@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>Online Book Store</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous"> -->
@@ -21,156 +21,82 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <script src="data.js"></script>
     <script src="script.js"></script>
 </head>
 
-<body>
+<body onload="initialize()">
+    <!-- write your html code here -->
 
-
+    <!-- header -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-
 
         <div class="logo">
 
         </div>
+
         <div class="heading">
             <h3>Online Book Store</h3>
-            <p>select the book you want to purchase</p>
+            <p>
+                <strong>Select the book you want to purchase</strong>
+            </p>
         </div>
-
     </nav>
+
     <!-- card -->
     <div class="container">
-
-
         <div class="card border-secondary mb-3">
-            <div class="image">
-                <img src="images/book.png" alt="">
-            </div>
-            <div class="card-body">
-                <h4 class="card-title">How to Stop Worrying and Start Living </h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <p class="text-info">Through Dale Carnegie’s six-million-copy bestseller recently revised, millions of people have been helped
-                    to overcome the worry habit. Dale Carnegie offers a set of practical formulas you can put to work today.
-                    In our fast-paced world—formulas that will last a lifetime!</p>
-                <div class="secondlast-para">
-                    <div class="price">
-                        <strong>Price:</strong>
-                        <p class="text-success">$5.99</p>
-                    </div>
 
-                    <div class="pre-nex">
-                        <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                            <label class="btn btn-primary active" onclick="increase()">
-                                <input type="checkbox" checked="" autocomplete="off"> -
-                            </label>
-                            <label class="btn" id="dec">
-                                <input type="checkbox" autocomplete="off">
-                            </label>
-                            <label class="btn btn-primary active" onclick="decrease()">
-                                <input type="checkbox" autocomplete="off"> +
-                            </label>
+            <div class="card-body">
+                <div class="book-image">
+                    <!--book image  -->
+                    <div id="image"></div>
+                </div>
+                <div class="card-content">
+                    <h4 class="card-title">
+                        <!-- book name -->
+                    </h4>
+                    <p id="author">by
+                        <strong></strong>
+                    </p>
+
+                    <p class="text-info">
+                        <!-- book detail -->
+                    </p>
+                    <!-- price setting -->
+                    <div id="price-set">
+                        <div class="price">
+                            <p>
+                                <strong>Price</strong>.
+                                <p class="text-success">5.99</p>
+                            </p>
+                        </div>
+                        <div class="counter">
+                           <div class="input-group mb-3">
+                                    <button onclick="decrease()" class="btn btn-primary input-group-prepend">
+                                        -
+                                    </button>
+                                    <input value="0" placeholder="value" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                                    <button onclick="increase()" class="btn btn-primary input-group-append">
+                                        +
+                                    </button>
+                                </div>
+                            <div class="form-group">
+
+                            </div>
                         </div>
                     </div>
+
                 </div>
 
             </div>
-
         </div>
+        <!-- changing price -->
         <div class="alert alert-dismissible alert-primary">
-            <strong>Total Amount:</strong>
-            <a href="#" class="alert-link">$</a>
+            Total Amount:
+            <strong>$</strong>
             <p id="price"></p>
         </div>
-    </div>
-    <!-- second book -->
-    <div class="card border-secondary mb-3">
-        <div class="image">
-            <img src="images/book1.jpg" alt="">
-        </div>
-        <div class="card-body">
-            <h4 class="card-title">SUPERCHARGE SOCIAL SKILLS </h4>
-            <p class="card-text">Action guide to build self confidence and make lot of friends Paperback – August 30, 2018</p>
-            <p class="text-info">Is it hard for you to make new friends? Are you feeling awkward when meeting new people? Would you like to be
-                better at networking? Or would you like to be more courageous in front of that girl or that boy? This eBook
-                has the answer for any social desire or problem you may face!People are born with equal social skills, but
-                due to some circumstances in childhood or teenage years, some get to develop them better than others. I was
-                an anti-social nerd until my first year of college. In the summer between these years I learned the basics
-                of networking and socializing, and in the next years of college, I became the most popular guy there.Will
-                you let me guide you?7 Reasons you should buy this eBook:1. You will understand the art of socializing2.
-                You will find out why you haven’t been successful in social skills3. You will learn how to create and develop
-                relationships4. You will know how to network5. You will learn how to cooperate better6. Your overall physical
-                and mental health will </p>
-            <div class="secondlast-para">
-                <div class="price">
-                    <strong>Price:</strong>
-                    <p class="text-success">$11.97</p>
-                </div>
-
-                <div class="pre-nex">
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary active" onclick=" secIncrease()">
-                            <input type="checkbox" checked="" autocomplete="off"> -
-                        </label>
-                        <label class="btn" id="sec-dec">
-                            <input type="checkbox" autocomplete="off">
-                        </label>
-                        <label class="btn btn-primary active" onclick="secDecrease()">
-                            <input type="checkbox" autocomplete="off"> +
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-    <div class="alert alert-dismissible alert-primary">
-        <strong>Total Amount:</strong>
-        <a href="#" class="alert-link">$</a>
-        <p id="sec-price"></p>
-    </div>
-    </div>
-    <!-- third -->
-    <div class="card border-secondary mb-3">
-        <div class="image">
-            <img src="images/book2.jpg" alt="">
-        </div>
-        <div class="card-body">
-            <h4 class="card-title">Declutter Your Mind</h4>
-            <p class="card-text"> How to Stop Worrying, Relieve Anxiety, and Eliminate Negative Thinking</p>
-            <p class="text-info">Discover the daily habits to stop worrying, relieve stress, overcome anxiety and create mindfulness in your life!
-                </p>
-            <div class="secondlast-para">
-                <div class="price">
-                    <strong>Price:</strong>
-                    <p class="text-success">$3.99</p>
-                </div>
-
-                <div class="pre-nex">
-                    <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                        <label class="btn btn-primary active" onclick=" thirdIncrease()">
-                            <input type="checkbox" checked="" autocomplete="off"> -
-                        </label>
-                        <label class="btn" id="third-dec">
-                            <input type="checkbox" autocomplete="off">
-                        </label>
-                        <label class="btn btn-primary active" onclick="thirdDecrease()">
-                            <input type="checkbox" autocomplete="off"> +
-                        </label>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-    <div class="alert alert-dismissible alert-primary">
-        <strong>Total Amount:</strong>
-        <a href="#" class="alert-link">$</a>
-        <p id="third-price"></p>
-    </div>
-    </div>
     </div>
 </body>
 
